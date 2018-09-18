@@ -7,6 +7,10 @@ defmodule Practice.Calc do
   def calc(expr) do
     # This should handle +,-,*,/ with order of operations,
     # but doesn't need to handle parens.
+    # String expression = String.split(expr, "+")
+    # expression = String.split(expression, "-")
+    # expression = String.split(expression, "*")
+    # expression = String.split(expression, "/")
     expr
     |> String.split(~r/\s+/)
     |> hd
@@ -20,5 +24,10 @@ defmodule Practice.Calc do
     # |> convert to postfix
     # |> reverse to prefix
     # |> evaluate as a stack calculator using pattern matching
+  end
+
+  # Is the given string a palindrome
+  def isPalindrome(expr) when is_binary(expr) do
+    expr == String.reverse(expr)
   end
 end
